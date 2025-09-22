@@ -29,6 +29,22 @@ export interface Feature {
   icon: string;
 }
 
+export interface Event {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  location: string;
+  attendees: number;
+  maxAttendees?: number;
+  imageUrl?: string;
+  shortLink?: string;
+  status: 'upcoming' | 'ongoing' | 'passed';
+  category: string;
+  organizer: string;
+}
+
 // Mock user data
 export const mockUsers: User[] = [
   {
@@ -91,5 +107,97 @@ export const featuresData: Feature[] = [
     title: 'Secure',
     description: 'Built with security best practices in mind',
     icon: 'shield'
+  }
+];
+
+// Sample Events Data for MTC
+export const eventsData: Event[] = [
+  {
+    id: '1',
+    title: 'Microsoft Azure Fundamentals Workshop',
+    description: 'Learn the basics of Microsoft Azure cloud services, including compute, storage, and networking. Perfect for beginners looking to start their cloud journey.',
+    date: '2025-10-15',
+    time: '2:00 PM - 5:00 PM',
+    location: 'ISIMM Campus - Room A101',
+    attendees: 45,
+    maxAttendees: 60,
+    imageUrl: 'https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    shortLink: 'https://bit.ly/mtc-azure-workshop',
+    status: 'upcoming',
+    category: 'Cloud Computing',
+    organizer: 'MTC ISIMM'
+  },
+  {
+    id: '2', 
+    title: 'AI & Machine Learning Bootcamp',
+    description: 'Hands-on experience with Microsoft Cognitive Services and Azure ML. Build your first AI application using real-world datasets.',
+    date: '2025-10-22',
+    time: '9:00 AM - 4:00 PM',
+    location: 'Online via Microsoft Teams',
+    attendees: 78,
+    maxAttendees: 100,
+    imageUrl: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    shortLink: 'https://bit.ly/mtc-ai-bootcamp',
+    status: 'upcoming',
+    category: 'Artificial Intelligence',
+    organizer: 'MTC ISIMM'
+  },
+  {
+    id: '3',
+    title: 'Power Platform Developer Session',
+    description: 'Currently happening! Join us to explore Power Apps, Power Automate, and Power BI. Create business solutions without traditional coding.',
+    date: '2025-09-22',
+    time: '3:00 PM - 6:00 PM', 
+    location: 'ISIMM Campus - Lab B205',
+    attendees: 32,
+    maxAttendees: 40,
+    imageUrl: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    shortLink: 'https://bit.ly/mtc-powerplatform',
+    status: 'ongoing',
+    category: 'Low-Code Development',
+    organizer: 'MTC ISIMM'
+  },
+  {
+    id: '4',
+    title: 'Microsoft 365 Security Best Practices',
+    description: 'Learn how to secure your organization with Microsoft 365 security tools including Defender, Intune, and compliance features.',
+    date: '2025-08-15',
+    time: '10:00 AM - 1:00 PM',
+    location: 'ISIMM Campus - Amphitheater',
+    attendees: 95,
+    maxAttendees: 120,
+    imageUrl: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    status: 'passed',
+    category: 'Cybersecurity',
+    organizer: 'MTC ISIMM'
+  },
+  {
+    id: '5',
+    title: 'DevOps with GitHub and Azure DevOps',
+    description: 'Master continuous integration and deployment using GitHub Actions and Azure DevOps. Build robust CI/CD pipelines.',
+    date: '2025-07-20',
+    time: '1:00 PM - 5:00 PM',
+    location: 'ISIMM Campus - Computer Lab',
+    attendees: 67,
+    maxAttendees: 80,
+    imageUrl: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    status: 'passed',
+    category: 'DevOps',
+    organizer: 'MTC ISIMM'
+  },
+  {
+    id: '6',
+    title: 'Microsoft Teams App Development',
+    description: 'Build custom applications for Microsoft Teams using the Teams Toolkit. Create bots, tabs, and messaging extensions.',
+    date: '2025-11-05',
+    time: '2:30 PM - 6:30 PM',
+    location: 'Hybrid - ISIMM & Online',
+    attendees: 23,
+    maxAttendees: 50,
+    imageUrl: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=500&h=300&dpr=2',
+    shortLink: 'https://bit.ly/mtc-teams-dev',
+    status: 'upcoming',
+    category: 'App Development',
+    organizer: 'MTC ISIMM'
   }
 ];
