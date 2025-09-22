@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Homepage from '../Pages/Public/Homepage';
-import Dashboard from '../Pages/Private/Dashboard';
-import { useAuth } from '../Context/AuthContext';
+import Homepage from '../Public/Homepage';
+import Dashboard from '../Private/Dashboard';
+import { useAuth } from '../../Context/AuthContext';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

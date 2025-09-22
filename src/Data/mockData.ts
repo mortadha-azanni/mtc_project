@@ -50,8 +50,9 @@ export const mockUsers: User[] = [
 // Navigation items
 export const navigationItems: NavigationItem[] = [
   { id: 'home', label: 'Home', href: '/', icon: 'home', public: true },
-  { id: 'about', label: 'About', href: '/about', icon: 'info', public: true },
-  { id: 'contact', label: 'Contact', href: '/contact', icon: 'mail', public: true },
+  { id: 'events', label: 'Events', href: '/events', icon: 'info', public: true },
+  { id: 'join-us', label: 'Join Us', href: '/join-us', icon: 'mail', public: true },
+  { id: 'contact', label: 'Contact', href: '/contact', icon: 'phone', public: true },
   { id: 'dashboard', label: 'Dashboard', href: '/dashboard', icon: 'layout-dashboard', public: false },
   { id: 'profile', label: 'Profile', href: '/profile', icon: 'user', public: false }
 ];
