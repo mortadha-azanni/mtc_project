@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from '../Public/Homepage';
+import Events from '../Public/Events';
+import JoinUs from '../Public/JoinUs';
+import Contact from '../Public/Contact';
 import Dashboard from '../Private/Dashboard';
 import { useAuth } from '../../Context/AuthContext';
 
@@ -43,6 +46,30 @@ const AppRouter: React.FC = () => {
           element={
             <PublicRoute>
               <Homepage />
+            </PublicRoute>
+          } 
+        />
+        <Route 
+          path="/events" 
+          element={
+            <PublicRoute>
+              <Events />
+            </PublicRoute>
+          } 
+        />
+        <Route 
+          path="/join-us" 
+          element={
+            <PublicRoute>
+              <JoinUs />
+            </PublicRoute>
+          } 
+        />
+        <Route 
+          path="/contact" 
+          element={
+            <PublicRoute>
+              <Contact />
             </PublicRoute>
           } 
         />

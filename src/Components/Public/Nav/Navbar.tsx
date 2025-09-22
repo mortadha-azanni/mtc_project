@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { navigationItems } from '../../../Data/mockData';
 import logo from '../../../Assets/logo_1.png';
@@ -11,14 +12,19 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ showSidebar = false, isAuthenticated = false, setIsSidebarOpen, isSidebarOpen }) => {
+    const location = useLocation();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
-        };
+    };
       
     const visibleNavItems = navigationItems.filter(item => 
-    item.public || isAuthenticated
-  );
+        item.public || isAuthenticated
+    );
+
+    const isActive = (href: string) => {
+        return location.pathname === href;
+    };
 
     return (
         <>
@@ -28,9 +34,9 @@ const Navbar: React.FC<NavbarProps> = ({ showSidebar = false, isAuthenticated = 
           <div className="flex justify-between items-center h-16">
 
               {/* Logo */}
-              <div 
+              <Link 
+                to="/"
                 className="flex-shrink-0 flex items-center ml-4 md:ml-0 hover:cursor-pointer hover:bg-gray-100 p-2 rounded-md"
-                onClick={() => window.location.href = '/'}
               >
                 <img src={logo} alt="MTC" className="h-8 w-auto" />
                 <span className="ml-2 text-xl font-semibold text-gray-900">
@@ -40,18 +46,22 @@ const Navbar: React.FC<NavbarProps> = ({ showSidebar = false, isAuthenticated = 
                 <span className="ml-2 text-xl font-semibold text-gray-900">
                   Modern App
                 </span> */}
-              </div>
+              </Link>
 
             {/* Navigation - Desktop */}
             <nav className="hidden md:flex space-x-8">
               {visibleNavItems.map((item) => (
-                <a
+                <Link
                   key={item.id}
-                  href={item.href}
-                  className="text-gray-500 hover:text-gray-950 px-3 py-2 rounded-md text-md font-medium hover:underline decoration-2 decoration-blue-500 underline-offset-8 transition-all duration-300"
+                  to={item.href}
+                  className={`px-3 py-2 rounded-md text-md font-medium hover:underline decoration-2 decoration-blue-500 underline-offset-8 transition-all duration-300 ${
+                    isActive(item.href) 
+                      ? 'text-base-3 font-semibold underline' 
+                      : 'text-gray-500 hover:text-gray-950'
+                  }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
